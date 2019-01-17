@@ -1,0 +1,48 @@
+<body id="LoginForm">
+    <div class="container">
+   
+            <div class="header">
+            <h2 > Welcome To MakeMyTrip </h2>
+          </div>
+
+
+<div class="container-fluid" class="align-center">
+   <div class="row"> 
+      <div class="col-md-4 col-sm-4 col-xs-8"></div>
+    <div class="col-md-4 col-sm-4 col-xs-8">
+        <form novalidate  class="form-container" [formGroup]="form" (ngSubmit)="Submit(form)">
+       
+            <div class="form-group">
+                <label for="email">Email-Id:</label>
+                <input type="email" class="form-control" placeholder="Enter email" formControlName="EmailId" >
+                </div>
+                <div *ngIf="form.get('EmailId').invalid && form.get('EmailId').touched" class="alert alert-danger">
+                    <div *ngIf="form.get('EmailId').hasError('required')"> 
+                  email is required
+                    </div>
+                    <div *ngIf="form.get('EmailId').hasError('email')"> 
+                        invalid email
+                     </div>
+                 </div>
+
+      <div class="form-group">
+      <label for="Password">Password:</label>
+      <show-hide-password size="lg" icon="entypo"  [btnOutline]="false">
+      <input type="password" class="form-control" placeholder="Enter Password" name="password" ngModel 
+       #password="ngModel"  required />
+      </show-hide-password>
+      </div>
+      <div *ngIf="password?.touched" class="alert alert-danger">
+          <div *ngIf="password.errors?.required">
+          password is required
+         </div>
+      </div>
+   
+       
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Submit</button>
+  </form>
+   </div>
+    <div class="col-md-4 col-sm-4 col-xs-8"></div>
+
+
+
