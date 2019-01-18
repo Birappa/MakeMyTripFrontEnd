@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +10,16 @@ import { FormGroup, FormControl,Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
       EmailId: new FormControl('',[Validators.required,Validators.email])
      });
+  }
+
+  goHome(){
+    this.router.navigateByUrl('home');
   }
 
 }

@@ -1,17 +1,17 @@
 <body id="LoginForm">
-    <div class="container">
    
-            <div class="header">
-            <h2 > Welcome To MakeMyTrip </h2>
-          </div>
-
-
-<div class="container-fluid" class="align-center">
+<!-- <div class="container-fluid" class="align-center">
    <div class="row"> 
       <div class="col-md-4 col-sm-4 col-xs-8"></div>
-    <div class="col-md-4 col-sm-4 col-xs-8">
-        <form novalidate  class="form-container" [formGroup]="form" (ngSubmit)="Submit(form)">
-       
+    <div class="col-md-4 col-sm-4 col-xs-8"> -->
+        <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" 
+                  class="close" title="Close Modal">&times;</span>
+        <form novalidate  class="modal-content animate" [formGroup]="form" (ngSubmit)="Submit(form)" action="homecomponent.html">
+                <div class="header">
+                        <h3 > Welcome To MakeMyTrip </h3>
+                      </div>
+         <div class="container">
             <div class="form-group">
                 <label for="email">Email-Id:</label>
                 <input type="email" class="form-control" placeholder="Enter email" formControlName="EmailId" >
@@ -39,10 +39,13 @@
       </div>
    
        
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Submit</button>
+    <button type="submit" class="btn btn-primary btn-block" (click)="goHome()" ><a routerLink="home">Submit</a></button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+         </div>    
   </form>
-   </div>
-    <div class="col-md-4 col-sm-4 col-xs-8"></div>
+  </div>
+  <!-- [disabled]="form.invalid -->
+   
 
 
 

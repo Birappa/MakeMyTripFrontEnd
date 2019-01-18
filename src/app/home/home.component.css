@@ -1,3 +1,9 @@
-body#default{
+body#homePage{
     background-image:url("/assets/image/airplane-flight-sunset.jpg"); height:660px; 
  }
+h2{
+    color:cyan;
+}
+p{
+    align:center;
+}
